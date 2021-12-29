@@ -14,11 +14,6 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-`;
-
 const Profile = styled.div`
   align-items: center;
   justify-content: center;

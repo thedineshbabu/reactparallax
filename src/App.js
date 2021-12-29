@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import Me from "./components/images/me.png";
 import styled from "styled-components";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import About from "./components/About";
