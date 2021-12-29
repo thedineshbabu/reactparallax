@@ -1,5 +1,18 @@
 import React, { useRef } from "react";
+import Me from "./components/images/me.png";
+import styled from "styled-components";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import About from "./components/About";
+import Intro from "./components/Intro";
+import Avatar from "./components/images/me.png";
+
+const AboutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
 
 // Little helpers ...
 const url = (name, wrap = false) =>
@@ -13,7 +26,26 @@ export default function App() {
   const parallax = useRef(null);
   return (
     <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-      <Parallax ref={parallax} pages={3}>
+      <Parallax ref={parallax} pages={4}>
+        <ParallaxLayer
+          offset={0}
+          speed={1}
+          style={{ backgroundColor: "#222" }}
+        />
+
+        <ParallaxLayer
+          offset={0}
+          speed={1}
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            paddingTop: "10%",
+          }}
+        >
+          <img src={Avatar} alt="profile" width={200} />
+        </ParallaxLayer>
+
         <ParallaxLayer
           offset={1}
           speed={1}
@@ -150,7 +182,9 @@ export default function App() {
             justifyContent: "center",
           }}
         >
-          <img src={url("server")} style={{ width: "20%" }} alt="server" />
+          <AboutWrapper>
+            <Intro />
+          </AboutWrapper>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -163,11 +197,26 @@ export default function App() {
             justifyContent: "center",
           }}
         >
-          <img src={url("bash")} style={{ width: "40%" }} alt="bash" />
+          <AboutWrapper>
+            <About />
+          </AboutWrapper>
         </ParallaxLayer>
 
         <ParallaxLayer
           offset={2}
+          speed={0.1}
+          onClick={() => parallax.current.scrollTo(3)}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img src={url("bash")} style={{ width: "40%" }} alt="bash" />
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={3}
           speed={-0}
           style={{
             display: "flex",
@@ -176,7 +225,7 @@ export default function App() {
           }}
           onClick={() => parallax.current.scrollTo(0)}
         >
-          <img src={url("clients-main")} style={{ width: "40%" }} alt="cloud" />
+          <img src={url("clients-main")} style={{ width: "40%" }} alt="cmain" />
         </ParallaxLayer>
       </Parallax>
     </div>
