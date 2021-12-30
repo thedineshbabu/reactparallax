@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Profile from "./components/Profile";
-import Page2BG from "./components/Page2BG";
 import Title from "./components/intro/Title";
 import Name from "./components/intro/Name";
 import Stack from "./components/intro/Stack";
