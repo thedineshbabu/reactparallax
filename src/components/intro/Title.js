@@ -7,6 +7,8 @@ const IntroWrapper = styled.h1`
   font-size: 1.15em;
   font-weight: bold;
   color: #444;
+  margin-top: 5%;
+  margin-bottom: 15%;
 `;
 
 const Title = () => {

@@ -6,7 +6,7 @@ const StackWrapper = styled.h2`
   text-align: center;
   font-size: 1.5rem;
   color: #444;
-  padding-top: 20%;
+  padding-top: 10%;
 `;
 
 const Stack = () => {

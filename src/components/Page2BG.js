@@ -6,7 +6,7 @@ const Page2BG = () => {
     <ParallaxLayer
       offset={1}
       speed={1}
-      style={{ backgroundColor: "#805E73" }}
+      style={{ backgroundColor: "#87BCDE" }}
     />
   );
 };

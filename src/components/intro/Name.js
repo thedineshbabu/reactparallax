@@ -7,7 +7,7 @@ const NameWrapper = styled.h2`
   font-size: 3.75rem;
   font-weight: bold;
   color: #444;
-  padding-top: 10%;
+  margin-bottom: 2%;
 `;
 
 const Name = () => {
