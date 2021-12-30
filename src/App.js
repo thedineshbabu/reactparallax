@@ -8,7 +8,6 @@ import Page3BG from "./components/Page3BG";
 import Title from "./components/intro/Title";
 import Name from "./components/intro/Name";
 import Stack from "./components/intro/Stack";
-import Nav from "./components/intro/Nav";
 import Arrow from "./components/images/arrow.png";
 import { useSpring, animated } from "react-spring";
 
@@ -55,8 +54,6 @@ export default function App() {
         <Profile />
 
         <Stack />
-
-        <Nav parallax={parallax} />
 
         <Page2BG />
 
