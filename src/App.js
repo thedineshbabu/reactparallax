@@ -2,8 +2,15 @@ import React, { useRef } from "react";
 import styled from "styled-components";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import About from "./components/About";
-import Intro from "./components/Intro";
-import Avatar from "./components/images/me.png";
+import Profile from "./components/Profile";
+import Page2BG from "./components/Page2BG";
+import Page3BG from "./components/Page3BG";
+import Title from "./components/intro/Title";
+import Name from "./components/intro/Name";
+import Stack from "./components/intro/Stack";
+import Nav from "./components/intro/Nav";
+import Arrow from "./components/images/arrow.png";
+import { useSpring, animated } from "react-spring";
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -22,6 +29,15 @@ const url = (name, wrap = false) =>
   }`;
 
 export default function App() {
+  const arrowStyle = useSpring({
+    loop: true,
+    from: { transform: "translate3d(0,0,0)" },
+    to: [
+      { transform: "translate3d(0, 10px, 0)" },
+      { transform: "translate3d(0, 0, 0)" },
+    ],
+  });
+
   const parallax = useRef(null);
   return (
     <div style={{ width: "100%", height: "100%", background: "#253237" }}>
@@ -29,32 +45,22 @@ export default function App() {
         <ParallaxLayer
           offset={0}
           speed={1}
-          style={{ backgroundColor: "#222" }}
+          onClick={() => parallax.current.scrollTo(1)}
         />
 
-        <ParallaxLayer
-          offset={0}
-          speed={1}
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "center",
-            paddingTop: "10%",
-          }}
-        >
-          <img src={Avatar} alt="profile" width={200} />
-        </ParallaxLayer>
+        <Title />
 
-        <ParallaxLayer
-          offset={1}
-          speed={1}
-          style={{ backgroundColor: "#805E73" }}
-        />
-        <ParallaxLayer
-          offset={2}
-          speed={1}
-          style={{ backgroundColor: "#87BCDE" }}
-        />
+        <Name />
+
+        <Profile />
+
+        <Stack />
+
+        <Nav parallax={parallax} />
+
+        <Page2BG />
+
+        <Page3BG />
 
         <ParallaxLayer
           offset={0}
@@ -173,17 +179,25 @@ export default function App() {
 
         <ParallaxLayer
           offset={0}
-          speed={0.1}
-          onClick={() => parallax.current.scrollTo(1)}
+          speed={7}
           style={{
             display: "flex",
-            alignItems: "center",
+            alignItems: "flex-end",
             justifyContent: "center",
           }}
         >
-          <AboutWrapper>
-            <Intro />
-          </AboutWrapper>
+          <animated.img
+            src={Arrow}
+            style={{
+              cursor: "pointer",
+              width: "25px",
+              height: "25px",
+              marginBottom: "5%",
+              ...arrowStyle,
+            }}
+            alt="arrow"
+            onClick={() => parallax.current.scrollTo(1)}
+          ></animated.img>
         </ParallaxLayer>
 
         <ParallaxLayer

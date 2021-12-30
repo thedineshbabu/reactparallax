@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Avatar from "./images/me.png";
+// import Avatar from "./images/me.png";
 
 const Wrapper = styled.div`
   text-align: justify;
-  max-width: 1000px;
+  max-width: 800px;
   min-width: 250px;
   align-items: center;
   align-content: center;
@@ -14,15 +14,15 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Profile = styled.div`
-  align-items: center;
-  justify-content: center;
-  background-repeat: no-repeat;
-  background-size: fit;
-  background-position: center;
-  width: 225px;
-  height: 225px;
-`;
+// const Profile = styled.div`
+//   align-items: center;
+//   justify-content: center;
+//   background-repeat: no-repeat;
+//   background-size: fit;
+//   background-position: center;
+//   width: 225px;
+//   height: 225px;
+// `;
 
 const Para = styled.p`
   font-size: 1.25em;
@@ -34,9 +34,6 @@ const Para = styled.p`
 const About = () => {
   return (
     <Wrapper>
-      <Profile>
-        <img src={Avatar} alt="profile" width={200} />
-      </Profile>
       <Para>
         Dinesh is a full stack .NET Developer with over 11 years of experience
         working with insurance, banking, and gaming companies. He specializes in
