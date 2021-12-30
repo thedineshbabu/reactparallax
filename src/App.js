@@ -76,7 +76,30 @@ export default function App() {
             alignItems: "flex-end",
             justifyContent: "center",
           }}
+        ></ParallaxLayer>
+
+        <ParallaxLayer
+          offset={0}
+          speed={7}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            flexDirection: "column",
+          }}
         >
+          <animated.img
+            src={Download}
+            style={{
+              cursor: "pointer",
+              width: "25px",
+              height: "25px",
+              marginBottom: "5%",
+            }}
+            alt="Download"
+            onClick={downloadFile}
+            title="Download Resume"
+          ></animated.img>
           <animated.img
             src={Arrow}
             style={{
@@ -89,38 +112,6 @@ export default function App() {
             alt="arrow"
             onClick={() => parallax.current.scrollTo(1)}
           ></animated.img>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={0}
-          speed={7}
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "center",
-          }}
-        >
-          <div
-            style={{
-              cursor: "pointer",
-              marginBottom: "15%",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-            }}
-          >
-            <animated.img
-              src={Download}
-              style={{
-                cursor: "pointer",
-                width: "25px",
-                height: "25px",
-              }}
-              alt="Download"
-              onClick={downloadFile}
-              title="Download Resume"
-            ></animated.img>
-          </div>
         </ParallaxLayer>
 
         <ParallaxLayer
