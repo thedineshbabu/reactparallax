@@ -8,7 +8,7 @@ import Arrow from "./components/images/arrow.png";
 import { useSpring, animated } from "react-spring";
 import P1 from "./components/about/P1";
 import ParallaxPage from "./components/ParallaxPage";
-import Download from "./components/images/dfiles.svg";
+import DColor from "./components/images/dcolor.png";
 import Skills from "./components/skills/Skills";
 import Contact from "./components/contact/Contact";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
@@ -99,7 +99,7 @@ export default function App() {
             }}
           >
             <animated.img
-              src={Download}
+              src={DColor}
               style={{
                 cursor: "pointer",
                 width: "25px",
