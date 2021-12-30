@@ -10,6 +10,8 @@ import { useSpring, animated } from "react-spring";
 import P1 from "./components/about/P1";
 import Page3BG from "./components/Page3BG";
 import Page4BG from "./components/Page4BG";
+import ParallaxPage from "./components/ParallaxPage";
+import Download from "./components/images/dfiles.svg";
 
 // const AboutWrapper = styled.div`
 //   display: flex;
@@ -37,6 +39,17 @@ export default function App() {
     ],
   });
 
+  const lastArrow = useSpring({
+    from: { rotateZ: 0 },
+    to: { rotateZ: 180 },
+  });
+
+  const downloadFile = () => {
+    window.open(
+      "https://drive.google.com/file/d/17MQjUdgUbwX7VOTaJOMwxdTlO2L3d3IU/view?usp=sharing"
+    );
+  };
+
   const parallax = useRef(null);
   return (
     <div style={{ width: "100%", height: "100%", background: "#253237" }}>
@@ -45,7 +58,12 @@ export default function App() {
         <Name />
         <Profile />
         <Stack />
-        <Page2BG />
+        {/* <Page2BG /> */}
+        <ParallaxPage
+          offset={1}
+          speed={1}
+          style={{ backgroundColor: "#87BCDE" }}
+        />
         <P1 />
         <Page3BG />
         <Page4BG />
@@ -71,6 +89,38 @@ export default function App() {
             alt="arrow"
             onClick={() => parallax.current.scrollTo(1)}
           ></animated.img>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={0}
+          speed={7}
+          style={{
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              cursor: "pointer",
+              marginBottom: "15%",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+            }}
+          >
+            <animated.img
+              src={Download}
+              style={{
+                cursor: "pointer",
+                width: "25px",
+                height: "25px",
+              }}
+              alt="Download"
+              onClick={downloadFile}
+              title="Download Resume"
+            ></animated.img>
+          </div>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -124,7 +174,7 @@ export default function App() {
           speed={3}
           style={{
             display: "flex",
-            alignItems: "flex-end",
+            alignItems: "flex-start",
             justifyContent: "center",
           }}
         >
@@ -134,8 +184,9 @@ export default function App() {
               cursor: "pointer",
               width: "25px",
               height: "25px",
-              marginBottom: "5%",
+              marginTop: "2%",
               ...arrowStyle,
+              ...lastArrow,
             }}
             alt="arrow"
             onClick={() => parallax.current.scrollTo(0)}

@@ -4,11 +4,9 @@ import { ParallaxLayer } from "@react-spring/parallax";
 
 const IntroWrapper = styled.h1`
   text-align: center;
-  font-size: 1.15em;
+  font-size: 15px;
   font-weight: bold;
   color: #444;
-  margin-top: 5%;
-  margin-bottom: 15%;
 `;
 
 const Title = () => {

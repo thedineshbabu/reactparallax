@@ -2,12 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import { ParallaxLayer } from "@react-spring/parallax";
 
-const StackWrapper = styled.h2`
-  text-align: center;
-  font-size: 1.5rem;
-  color: #444;
-  padding-top: 10%;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 `;
+
+const H2Wrapper = styled.h2`
+  text-align: center;
+  font-size: 20px;
+  color: #59b256;
+  padding-top: 210px;
+`;
+
+// const ResumeWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   padding-top: 10px;
+//   font-size: 10px;
+//   cursor: pointer;
+// `;
 
 const Stack = () => {
   return (
@@ -18,9 +37,12 @@ const Stack = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        pointerEvents: "initial",
       }}
     >
-      <StackWrapper>Full Stack Developer</StackWrapper>
+      <Wrapper>
+        <H2Wrapper>Full Stack Developer</H2Wrapper>
+      </Wrapper>
     </ParallaxLayer>
   );
 };

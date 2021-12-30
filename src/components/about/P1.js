@@ -36,10 +36,10 @@ const P1 = () => {
     >
       <Wrapper>
         <P1Wrapper>
-          Dinesh is a full stack .NET Developer with over 11 years of experience
-          working with insurance, banking, and gaming companies. He specializes
-          in using .NET Core, Docker, and Kubernetes in building APIs, and in
-          using React and Vue for creating UI applications.
+          Dinesh is a full stack .NET Developer with over a decade years of
+          experience working with insurance, banking, and gaming companies. He
+          specializes in using .NET Core, Docker, and Kubernetes in building
+          APIs, and in using React and Vue for creating UI applications.
         </P1Wrapper>
         <P1Wrapper>
           Dinesh is a Microsoft certified Azure Developer Associate. He has
