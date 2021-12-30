@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { ParallaxLayer } from "@react-spring/parallax";
 
 const P1Wrapper = styled.p`
-  font-size: 1.25em;
   margin: 0.5em 0;
   font-style: italic;
   font-weight: bold;
@@ -13,7 +12,7 @@ const P1Wrapper = styled.p`
 const Wrapper = styled.div`
   text-align: justify;
   max-width: 80%;
-  min-width: 60%;
+  min-width: 75%;
   align-items: center;
   align-content: center;
   justify-content: center;

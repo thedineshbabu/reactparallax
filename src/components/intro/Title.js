@@ -6,7 +6,6 @@ const IntroWrapper = styled.h1`
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  color: #444;
 `;
 
 const Title = () => {

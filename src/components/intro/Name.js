@@ -6,7 +6,6 @@ const NameWrapper = styled.h2`
   text-align: center;
   font-size: 28px;
   font-weight: bold;
-  color: #444;
   margin-top: 100px;
 `;
 

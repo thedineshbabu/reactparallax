@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Profile from "./components/Profile";
 import Title from "./components/intro/Title";
@@ -7,28 +7,38 @@ import Stack from "./components/intro/Stack";
 import Arrow from "./components/images/arrow.png";
 import { useSpring, animated } from "react-spring";
 import P1 from "./components/about/P1";
-import Page3BG from "./components/Page3BG";
-import Page4BG from "./components/Page4BG";
 import ParallaxPage from "./components/ParallaxPage";
 import Download from "./components/images/dfiles.svg";
+import Skills from "./components/skills/Skills";
+import Contact from "./components/contact/Contact";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 
-// const AboutWrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   width: 100%;
-//   justify-content: center;
-//   align-items: center;
-// `;
-
-// Little helpers ...
-// const url = (name, wrap = false) =>
-//   `${
-//     wrap ? "url(" : ""
-//   }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-//     wrap ? ")" : ""
-//   }`;
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${({ theme }) => theme.bgColor};
+    color: ${({ theme }) => theme.textColor};
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin: 0;
+  }
+`;
 
 export default function App() {
+  const [theme, setTheme] = useState("dark");
+  const isDark = theme === "dark";
+
+  const toggleTheme = () => setTheme(isDark ? "light" : "dark");
+
+  const lightTheme = {
+    bgColor: "#fff",
+    textColor: "#444",
+  };
+
+  const darkTheme = {
+    bgColor: "#444",
+    textColor: "#fff",
+  };
+
   const arrowStyle = useSpring({
     loop: true,
     from: { transform: "translate3d(0,0,0)" },
@@ -51,138 +61,158 @@ export default function App() {
 
   const parallax = useRef(null);
   return (
-    <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-      <Parallax ref={parallax} pages={4}>
-        <Title />
-        <Name />
-        <Profile />
-        <Stack />
-        {/* <Page2BG /> */}
-        <ParallaxPage
-          offset={1}
-          speed={1}
-          style={{ backgroundColor: "#87BCDE" }}
-        />
-        <P1 />
-        <Page3BG />
-        <Page4BG />
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme} setTheme={setTheme}>
+      <GlobalStyle />
+      <div style={{ width: "100%", height: "100%", background: "#253237" }}>
+        <Parallax ref={parallax} pages={4}>
+          <Title />
+          <Name />
+          <Profile />
+          <Stack />
+          <ParallaxPage
+            offset={1}
+            speed={1}
+            style={{ backgroundColor: "#87BCDE" }}
+          />
+          <P1 />
+          <Skills />
+          <Contact />
 
-        <ParallaxLayer
-          offset={0}
-          speed={7}
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "center",
-          }}
-        ></ParallaxLayer>
+          <ParallaxLayer
+            offset={0}
+            speed={7}
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "center",
+            }}
+          ></ParallaxLayer>
 
-        <ParallaxLayer
-          offset={0}
-          speed={7}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            flexDirection: "column",
-          }}
-        >
-          <animated.img
-            src={Download}
+          <ParallaxLayer
+            offset={0}
+            speed={7}
             style={{
-              cursor: "pointer",
-              width: "25px",
-              height: "25px",
-              marginBottom: "5%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              flexDirection: "column",
             }}
-            alt="Download"
-            onClick={downloadFile}
-            title="Download Resume"
-          ></animated.img>
-          <animated.img
-            src={Arrow}
-            style={{
-              cursor: "pointer",
-              width: "25px",
-              height: "25px",
-              marginBottom: "5%",
-              ...arrowStyle,
-            }}
-            alt="arrow"
-            onClick={() => parallax.current.scrollTo(1)}
-          ></animated.img>
-        </ParallaxLayer>
+          >
+            <animated.img
+              src={Download}
+              style={{
+                cursor: "pointer",
+                width: "25px",
+                height: "25px",
+                marginBottom: "5%",
+              }}
+              alt="Download"
+              onClick={downloadFile}
+              title="Download Resume"
+            ></animated.img>
+            <animated.img
+              src={Arrow}
+              style={{
+                cursor: "pointer",
+                width: "25px",
+                height: "25px",
+                marginBottom: "5%",
+                ...arrowStyle,
+              }}
+              alt="arrow"
+              onClick={() => parallax.current.scrollTo(1)}
+            ></animated.img>
+            <animated.h1
+              style={{
+                fontSize: "20px",
+                color: "#59b256",
+                top: "10px",
+                right: "30px",
+                position: "absolute",
+                cursor: "pointer",
+              }}
+            >
+              <animated.span onClick={toggleTheme}>
+                {isDark ? (
+                  <animated.h3> ☀️ </animated.h3>
+                ) : (
+                  <animated.h3> 🌙 </animated.h3>
+                )}
+              </animated.span>
+            </animated.h1>
+          </ParallaxLayer>
 
-        <ParallaxLayer
-          offset={1}
-          speed={3}
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "center",
-          }}
-        >
-          <animated.img
-            src={Arrow}
+          <ParallaxLayer
+            offset={1}
+            speed={3}
             style={{
-              cursor: "pointer",
-              width: "25px",
-              height: "25px",
-              marginBottom: "5%",
-              ...arrowStyle,
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "center",
             }}
-            alt="arrow"
-            onClick={() => parallax.current.scrollTo(2)}
-          ></animated.img>
-        </ParallaxLayer>
+          >
+            <animated.img
+              src={Arrow}
+              style={{
+                cursor: "pointer",
+                width: "25px",
+                height: "25px",
+                marginBottom: "5%",
+                ...arrowStyle,
+              }}
+              alt="arrow"
+              onClick={() => parallax.current.scrollTo(2)}
+            ></animated.img>
+          </ParallaxLayer>
 
-        <ParallaxLayer
-          offset={2}
-          speed={3}
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "center",
-          }}
-        >
-          <animated.img
-            src={Arrow}
+          <ParallaxLayer
+            offset={2}
+            speed={3}
             style={{
-              cursor: "pointer",
-              width: "25px",
-              height: "25px",
-              marginBottom: "5%",
-              ...arrowStyle,
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "center",
             }}
-            alt="arrow"
-            onClick={() => parallax.current.scrollTo(3)}
-          ></animated.img>
-        </ParallaxLayer>
+          >
+            <animated.img
+              src={Arrow}
+              style={{
+                cursor: "pointer",
+                width: "25px",
+                height: "25px",
+                marginBottom: "5%",
+                ...arrowStyle,
+              }}
+              alt="arrow"
+              onClick={() => parallax.current.scrollTo(3)}
+            ></animated.img>
+          </ParallaxLayer>
 
-        <ParallaxLayer
-          offset={3}
-          speed={3}
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "center",
-          }}
-        >
-          <animated.img
-            src={Arrow}
+          <ParallaxLayer
+            offset={3}
+            speed={3}
             style={{
-              cursor: "pointer",
-              width: "25px",
-              height: "25px",
-              marginTop: "2%",
-              ...arrowStyle,
-              ...lastArrow,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
             }}
-            alt="arrow"
-            onClick={() => parallax.current.scrollTo(0)}
-          ></animated.img>
-        </ParallaxLayer>
-      </Parallax>
-    </div>
+          >
+            <animated.img
+              src={Arrow}
+              style={{
+                cursor: "pointer",
+                width: "25px",
+                height: "25px",
+                marginTop: "2%",
+                ...arrowStyle,
+                ...lastArrow,
+              }}
+              alt="arrow"
+              onClick={() => parallax.current.scrollTo(0)}
+            ></animated.img>
+          </ParallaxLayer>
+        </Parallax>
+      </div>
+    </ThemeProvider>
   );
 }

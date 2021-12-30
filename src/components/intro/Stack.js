@@ -18,16 +18,6 @@ const H2Wrapper = styled.h2`
   padding-top: 210px;
 `;
 
-// const ResumeWrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   padding-top: 10px;
-//   font-size: 10px;
-//   cursor: pointer;
-// `;
-
 const Stack = () => {
   return (
     <ParallaxLayer
