@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ParallaxLayer } from "@react-spring/parallax";
 
-const IntroWrapper = styled.h5`
+const IntroWrapper = styled.h4`
   text-align: center;
   font-weight: bold;
 `;

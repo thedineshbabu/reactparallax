@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-const H2Wrapper = styled.h3`
+const H2Wrapper = styled.h2`
   text-align: center;
   color: #59b256;
   padding-top: 210px;

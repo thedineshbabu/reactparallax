@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ParallaxLayer } from "@react-spring/parallax";
 
-const NameWrapper = styled.h2`
+const NameWrapper = styled.h1`
   text-align: center;
   font-weight: bold;
   margin-top: 100px;
