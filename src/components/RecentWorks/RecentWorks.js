@@ -1,6 +1,5 @@
 import React from "react";
 import { ParallaxLayer } from "@react-spring/parallax";
-import SkillItem from "./SkillItem";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -12,14 +11,14 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-const Skills = () => {
+const RecentWorks = () => {
   return (
-    <ParallaxLayer offset={2} speed={1}>
+    <ParallaxLayer offset={3} speed={1}>
       <Wrapper>
-        <SkillItem />
+        <h1>Recent Works</h1>
       </Wrapper>
     </ParallaxLayer>
   );
 };
 
-export default Skills;
+export default RecentWorks;

@@ -14,7 +14,14 @@ const Profile = () => {
         paddingTop: "5%",
       }}
     >
-      <img src={Avatar} alt="profile" width={250} />
+      <img
+        src={Avatar}
+        alt="profile"
+        width={250}
+        style={{
+          borderRadius: "25%",
+        }}
+      />
     </ParallaxLayer>
   );
 };

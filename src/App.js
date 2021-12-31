@@ -7,10 +7,10 @@ import Stack from "./components/intro/Stack";
 import Arrow from "./components/images/arrow.png";
 import { useSpring, animated } from "react-spring";
 import P1 from "./components/about/P1";
-import ParallaxPage from "./components/ParallaxPage";
-import DColor from "./components/images/dcolor.png";
+// import ParallaxPage from "./components/ParallaxPage";
+import DColor from "./components/images/dfl.svg";
 import Skills from "./components/skills/Skills";
-import Contact from "./components/contact/Contact";
+import RecentWorks from "./components/RecentWorks/RecentWorks";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const isDark = theme === "dark";
 
   const toggleTheme = () => setTheme(isDark ? "light" : "dark");
@@ -69,14 +69,14 @@ export default function App() {
           <Name />
           <Profile />
           <Stack />
-          <ParallaxPage
+          {/* <ParallaxPage
             offset={1}
             speed={1}
             style={{ backgroundColor: "#87BCDE" }}
-          />
+          /> */}
           <P1 />
           <Skills />
-          <Contact />
+          <RecentWorks />
 
           <ParallaxLayer
             offset={0}
@@ -98,18 +98,6 @@ export default function App() {
               flexDirection: "column",
             }}
           >
-            <animated.img
-              src={DColor}
-              style={{
-                cursor: "pointer",
-                width: "25px",
-                height: "25px",
-                marginBottom: "5%",
-              }}
-              alt="Download"
-              onClick={downloadFile}
-              title="Download Resume"
-            ></animated.img>
             <animated.img
               src={Arrow}
               style={{
@@ -152,12 +140,26 @@ export default function App() {
             }}
           >
             <animated.img
-              src={Arrow}
+              src={DColor}
               style={{
                 cursor: "pointer",
                 width: "25px",
                 height: "25px",
                 marginBottom: "5%",
+              }}
+              alt="Download"
+              onClick={downloadFile}
+              title="Download Resume"
+            ></animated.img>
+            <animated.img
+              src={Arrow}
+              style={{
+                cursor: "pointer",
+                width: "25px",
+                height: "25px",
+                position: "absolute",
+                right: "30px",
+                bottom: "10%",
                 ...arrowStyle,
               }}
               alt="arrow"
@@ -180,7 +182,9 @@ export default function App() {
                 cursor: "pointer",
                 width: "25px",
                 height: "25px",
-                marginBottom: "5%",
+                position: "absolute",
+                right: "30px",
+                bottom: "10%",
                 ...arrowStyle,
               }}
               alt="arrow"
