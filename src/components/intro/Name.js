@@ -4,7 +4,6 @@ import { ParallaxLayer } from "@react-spring/parallax";
 
 const NameWrapper = styled.h2`
   text-align: center;
-  font-size: 28px;
   font-weight: bold;
   margin-top: 100px;
 `;

@@ -12,14 +12,18 @@ import DColor from "./components/images/dfl.svg";
 import Skills from "./components/skills/Skills";
 import RecentWorks from "./components/RecentWorks/RecentWorks";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import "./App.css";
 
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.bgColor};
     color: ${({ theme }) => theme.textColor};
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     margin: 0;
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
   }
 `;
 
@@ -69,11 +73,6 @@ export default function App() {
           <Name />
           <Profile />
           <Stack />
-          {/* <ParallaxPage
-            offset={1}
-            speed={1}
-            style={{ backgroundColor: "#87BCDE" }}
-          /> */}
           <P1 />
           <Skills />
           <RecentWorks />
@@ -145,7 +144,9 @@ export default function App() {
                 cursor: "pointer",
                 width: "25px",
                 height: "25px",
-                marginBottom: "5%",
+                top: "5%",
+                right: "50%",
+                position: "absolute",
               }}
               alt="Download"
               onClick={downloadFile}

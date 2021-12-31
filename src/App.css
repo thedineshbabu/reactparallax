@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,19 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+@media screen and (max-width: 992px) {
+  body {
+    font-family: "Poppins";
+    font-size: 200px;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    font-family: "Poppins";
   }
 }

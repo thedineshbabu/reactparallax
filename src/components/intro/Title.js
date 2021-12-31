@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ParallaxLayer } from "@react-spring/parallax";
 
-const IntroWrapper = styled.h1`
+const IntroWrapper = styled.h5`
   text-align: center;
-  font-size: 15px;
   font-weight: bold;
 `;
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const Wrapper = styled.h1`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,11 +11,7 @@ const Wrapper = styled.div`
 `;
 
 const SkillItem = () => {
-  return (
-    <Wrapper>
-      <h1>Skill Item</h1>
-    </Wrapper>
-  );
+  return <Wrapper>Skill Item</Wrapper>;
 };
 
 export default SkillItem;
