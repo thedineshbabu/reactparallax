@@ -21,7 +21,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     font-size: 22px;
     margin: 0;
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
+      font-size: 15px;
+    }
+    @media (max-width: 400px) {
       font-size: 10px;
     }
   }
