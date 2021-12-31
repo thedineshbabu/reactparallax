@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ParallaxLayer } from "@react-spring/parallax";
 
 const Wrapper = styled.div`
   display: flex;

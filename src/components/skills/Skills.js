@@ -1,5 +1,4 @@
 import React from "react";
-import { ParallaxLayer } from "@react-spring/parallax";
 import SkillItem from "./SkillItem";
 import styled from "styled-components";
 
