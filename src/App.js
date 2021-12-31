@@ -147,7 +147,7 @@ export default function App() {
                 cursor: "pointer",
                 width: "25px",
                 height: "25px",
-                top: "1%",
+                top: "5%",
                 right: "50%",
                 position: "absolute",
               }}
