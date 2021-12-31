@@ -7,7 +7,6 @@ import Stack from "./components/intro/Stack";
 import Arrow from "./components/images/arrow.png";
 import { useSpring, animated } from "react-spring";
 import P1 from "./components/about/P1";
-// import ParallaxPage from "./components/ParallaxPage";
 import DColor from "./components/images/dfl.svg";
 import Skills from "./components/skills/Skills";
 import RecentWorks from "./components/RecentWorks/RecentWorks";
@@ -77,7 +76,7 @@ export default function App() {
           <Profile />
           <Stack />
           <P1 />
-          <Skills />
+
           <RecentWorks />
 
           <ParallaxLayer
@@ -180,6 +179,8 @@ export default function App() {
               justifyContent: "center",
             }}
           >
+            <Skills />
+
             <animated.img
               src={Arrow}
               style={{
