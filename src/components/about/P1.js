@@ -6,13 +6,12 @@ const P1Wrapper = styled.p`
   margin: 0.5em 0;
   font-style: italic;
   font-weight: bold;
-  max-width: 80%;
+  max-width: 95%;
 `;
 
 const Wrapper = styled.div`
   text-align: justify;
-  max-width: 80%;
-  min-width: 75%;
+  max-width: 95%;
   align-items: center;
   align-content: center;
   justify-content: center;
