@@ -21,7 +21,7 @@ const H2Wrapper = styled.h2`
 
 const Stack = () => {
   return (
-    <ParallaxLayer offset={3} speed={1}>
+    <ParallaxLayer offset={0} speed={1}>
       <H2Wrapper>Full Stack Developer</H2Wrapper>
     </ParallaxLayer>
   );

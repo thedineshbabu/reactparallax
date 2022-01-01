@@ -10,7 +10,7 @@ import About from "./components/about/About";
 import DColor from "./components/images/dfl.svg";
 import IG from "./components/ig.svg";
 import GIT from "./components/git.svg";
-import LNKIN from "./components/linkedin.svg";
+import LNKIN from "./components/lnkin.svg";
 import EMAIL from "./components/email.svg";
 import Skills from "./components/skills/Skills";
 import RecentWorks from "./components/RecentWorks/RecentWorks";
@@ -76,20 +76,9 @@ export default function App() {
       <GlobalStyle />
       <div style={{ width: "100%", height: "100%", background: "#253237" }}>
         <Parallax ref={parallax} pages={4}>
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Title />
-            <Name />
-            <Stack />
-          </div>
+          <Title />
+          <Name />
+          <Stack />
           <Profile />
           <About />
           <RecentWorks />

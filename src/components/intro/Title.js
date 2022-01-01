@@ -13,7 +13,7 @@ const H4Wrapper = styled.h4`
 
 const Title = () => {
   return (
-    <ParallaxLayer offset={3} speed={1}>
+    <ParallaxLayer offset={0} speed={1}>
       <H4Wrapper>Hello, My name is</H4Wrapper>
     </ParallaxLayer>
   );

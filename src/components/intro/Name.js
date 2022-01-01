@@ -20,7 +20,7 @@ const H1Wrapper = styled.h1`
 
 const Name = () => {
   return (
-    <ParallaxLayer offset={3} speed={1}>
+    <ParallaxLayer offset={0} speed={1}>
       <H1Wrapper>Dinesh Babu Manoharan</H1Wrapper>
     </ParallaxLayer>
   );
