@@ -76,10 +76,21 @@ export default function App() {
       <GlobalStyle />
       <div style={{ width: "100%", height: "100%", background: "#253237" }}>
         <Parallax ref={parallax} pages={4}>
-          <Title />
-          <Name />
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Title />
+            <Name />
+            <Stack />
+          </div>
           <Profile />
-          <Stack />
           <About />
           <RecentWorks />
 
@@ -112,6 +123,8 @@ export default function App() {
                 alignItems: "space-evenly",
                 position: "absolute",
                 bottom: "20%",
+                right: "20%",
+                left: "20%",
               }}
             >
               <animated.img
