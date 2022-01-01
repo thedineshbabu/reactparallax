@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Profile from "./components/Profile";
 import Title from "./components/intro/Title";
@@ -6,13 +6,13 @@ import Name from "./components/intro/Name";
 import Stack from "./components/intro/Stack";
 import Arrow from "./components/images/arrow.png";
 import { useSpring, animated } from "react-spring";
-import P1 from "./components/about/P1";
+import About from "./components/about/About";
 import DColor from "./components/images/dfl.svg";
 import Skills from "./components/skills/Skills";
 import RecentWorks from "./components/RecentWorks/RecentWorks";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import "./App.css";
-
+import Wave from "./components/images/wave.svg";
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.bgColor};
@@ -28,6 +28,8 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 `;
+
+const { useState, useRef } = React;
 
 export default function App() {
   const [theme, setTheme] = useState("light");
@@ -75,9 +77,16 @@ export default function App() {
           <Name />
           <Profile />
           <Stack />
-          <P1 />
+          <About />
 
           <RecentWorks />
+
+          <ParallaxLayer
+          offset={0.25}
+          speed={-0.4}
+          factor={1}
+        ><img src={Wave} style={{ width: "100%" }} alt="wave" />
+        </ParallaxLayer>
 
           <ParallaxLayer
             offset={0}
@@ -130,7 +139,7 @@ export default function App() {
               </animated.span>
             </animated.h1>
           </ParallaxLayer>
-
+          
           <ParallaxLayer
             offset={1}
             speed={3}

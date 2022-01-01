@@ -4,7 +4,6 @@ import { ParallaxLayer } from "@react-spring/parallax";
 
 const P1Wrapper = styled.p`
   margin: 0.5em 0;
-  font-style: italic;
   font-weight: bold;
   max-width: 95%;
 `;
@@ -21,7 +20,7 @@ const Wrapper = styled.div`
   margin-top: 2%;
 `;
 
-const P1 = () => {
+const About = () => {
   return (
     <ParallaxLayer
       offset={1}
@@ -34,11 +33,12 @@ const P1 = () => {
     >
       <Wrapper>
         <P1Wrapper>
-          Dinesh is a full stack .NET Developer with over a decade years of
-          experience working with insurance, banking, and gaming companies. He
+          Dinesh is a full stack .NET Developer 💻 with over a decade years of
+          experience working with insurance, banking 🏦, and gaming 🎲 companies. He
           specializes in using .NET Core, Docker, and Kubernetes in building
           APIs, and in using React and Vue for creating UI applications.
         </P1Wrapper>
+        
         <P1Wrapper>
           Dinesh is a Microsoft certified Azure Developer Associate. He has
           experience in various Azure Resources, like Azure Functions, AKS,
@@ -65,4 +65,4 @@ const P1 = () => {
   );
 };
 
-export default P1;
+export default About;

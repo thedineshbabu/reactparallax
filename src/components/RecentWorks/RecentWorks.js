@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 import { ParallaxLayer } from "@react-spring/parallax";
 import styled from "styled-components";
-
 const Wrapper = styled.h1`
   display: flex;
   flex-direction: column;

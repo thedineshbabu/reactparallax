@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 
 const H2Wrapper = styled.h2`
   text-align: center;
-  color: #59b256;
+  color: #00cba9;
   padding-top: 210px;
 `;
 
