@@ -8,11 +8,14 @@ import Arrow from "./components/images/arrow.png";
 import { useSpring, animated } from "react-spring";
 import About from "./components/about/About";
 import DColor from "./components/images/dfl.svg";
+import IG from "./components/ig.svg";
+import GIT from "./components/git.svg";
+import LNKIN from "./components/linkedin.svg";
+import EMAIL from "./components/email.svg";
 import Skills from "./components/skills/Skills";
 import RecentWorks from "./components/RecentWorks/RecentWorks";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import "./App.css";
-import Wave from "./components/images/wave.svg";
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.bgColor};
@@ -78,15 +81,7 @@ export default function App() {
           <Profile />
           <Stack />
           <About />
-
           <RecentWorks />
-
-          {/* <ParallaxLayer
-          offset={0.25}
-          speed={-0.4}
-          factor={1}
-        ><img src={Wave} style={{ width: "100%" }} alt="wave" />
-        </ParallaxLayer> */}
 
           <ParallaxLayer
             offset={0}
@@ -108,6 +103,56 @@ export default function App() {
               flexDirection: "column",
             }}
           >
+            <animated.div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                cursor: "pointer",
+                justifyContent: "space-evenly",
+                alignItems: "space-evenly",
+                position: "absolute",
+                bottom: "20%",
+              }}
+            >
+              <animated.img
+                src={EMAIL}
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  cursor: "pointer",
+                }}
+              />
+
+              <animated.img
+                src={IG}
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  cursor: "pointer",
+                  paddingLeft: "25%",
+                }}
+              />
+
+              <animated.img
+                src={GIT}
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  cursor: "pointer",
+                  paddingLeft: "25%",
+                }}
+              />
+
+              <animated.img
+                src={LNKIN}
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  cursor: "pointer",
+                  paddingLeft: "25%",
+                }}
+              />
+            </animated.div>
             <animated.img
               src={Arrow}
               style={{
@@ -139,7 +184,7 @@ export default function App() {
               </animated.span>
             </animated.h1>
           </ParallaxLayer>
-          
+
           <ParallaxLayer
             offset={1}
             speed={3}

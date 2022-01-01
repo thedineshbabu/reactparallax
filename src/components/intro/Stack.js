@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 const H2Wrapper = styled.h2`
   text-align: center;
   color: #00cba9;
-  padding-top: 210px;
+  padding-top: 18%;
 `;
 
 const Stack = () => {
