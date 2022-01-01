@@ -81,12 +81,12 @@ export default function App() {
 
           <RecentWorks />
 
-          <ParallaxLayer
+          {/* <ParallaxLayer
           offset={0.25}
           speed={-0.4}
           factor={1}
         ><img src={Wave} style={{ width: "100%" }} alt="wave" />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
 
           <ParallaxLayer
             offset={0}
